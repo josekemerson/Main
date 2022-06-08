@@ -19,7 +19,7 @@ app.use(fileupload());
 const accountSid = process.env.TWILIO_ACOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 
-const chatBots = require("./model/chatBot");
+// const chatBots = require("./model/chatBot");
 const InvestorIdeas = require("./model/investorIdeas");
 const patentideas = require("./model/PatentIdeas");
 
