@@ -72,26 +72,26 @@ router.post("/SignUp", async (req, res, next) => {
       });
     });
 });
-router.post("/chatBot", async (req, res, next) => {
-  const chatBot = new chatBots({
-    submit: req.body.submit,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-  });
-  var response = await chatBot
-    .save()
-    .then((response) => {
-      res.json({
-        message: response,
-      });
-    })
-    .catch((error) => {
-      res.json({
-        message: error.message,
-      });
-    });
-});
+// router.post("/chatBot", async (req, res, next) => {
+//   const chatBot = new chatBots({
+//     submit: req.body.submit,
+//     first_name: req.body.first_name,
+//     last_name: req.body.last_name,
+//     email: req.body.email,
+//   });
+//   var response = await chatBot
+//     .save()
+//     .then((response) => {
+//       res.json({
+//         message: response,
+//       });
+//     })
+//     .catch((error) => {
+//       res.json({
+//         message: error.message,
+//       });
+//     });
+// });
 router.post("/saveInvestIdea", Authenticate, async (req, res, next) => {
   const userMan = await users.findOne({ email: req.auth.email });
   console.log(userMan);
