@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const connect = function () {
-  const url = "mongodb://localhost:27017/React-sample";
+const connect = function() {
+  const url = process.env.MONGO_URL1;
   const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true,

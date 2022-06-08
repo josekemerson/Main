@@ -6,8 +6,10 @@ var logger = require("morgan");
 var db = require("./routes/dbconfig/dbconnection");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var cors = require("cors");
 
 var app = express();
+app.use(cors());
 var dotenv = require("dotenv");
 dotenv.config();
 // view engine setup
@@ -26,13 +28,19 @@ db.connect((err) => {
   if (err) console.log("connection error" + err);
   else console.log("connected successfully");
 });
+
+app.use(express.static('public'));
+app.use('/images',express.static('images'));
+app.use('/routes/Images', express.static('routes/Images'));
+
+
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -41,5 +49,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+
+
+
 
 module.exports = app;
