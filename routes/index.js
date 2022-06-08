@@ -33,7 +33,7 @@ const client = require("twilio")(accountSid, authToken);
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("index", { title: "Jose" });
+  res.send("hello");
 });
 
 router.post("/SignUp", async (req, res, next) => {
