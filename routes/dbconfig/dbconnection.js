@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 var dotenv = require("dotenv");
 dotenv.config();
 const connect = function() {
-  const url = process.env.MONGO_URL;
+  const url = process.env.MONGO_URLll;
   const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true,
