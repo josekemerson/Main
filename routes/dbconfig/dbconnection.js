@@ -10,10 +10,15 @@ const connect = function() {
     useCreateIndex: true,
   };
 
-  mongoose.connect(url, options).then(async (db, err) => {
-    if (err) console.log("err connecting to db", err);
-    console.log("connected to DB!!");
-  });
+  mongoose
+    .connect(
+      "mongodb+srv://josek:RsoOKreCmNMlyZZV@cluster0.bwb4jsl.mongodb.net/?retryWrites=true&w=majority",
+      options
+    )
+    .then(async (db, err) => {
+      if (err) console.log("err connecting to db", err);
+      console.log("connected to DB!!");
+    });
 };
 
 module.exports.connect = connect;
