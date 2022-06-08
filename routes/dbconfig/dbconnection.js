@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 var dotenv = require("dotenv");
 dotenv.config();
 const connect = function() {
-  const url = process.env.MONGO_URLll;
+  const url =
+    "mongodb+srv://josek:RsoOKreCmNMlyZZV@cluster0.bwb4jsl.mongodb.net/?retryWrites=true&w=majority";
   const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true,
